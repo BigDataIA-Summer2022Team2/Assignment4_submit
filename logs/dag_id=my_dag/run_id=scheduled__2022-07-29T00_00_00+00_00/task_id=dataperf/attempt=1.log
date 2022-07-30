@@ -1,0 +1,280 @@
+[2022-07-30 00:31:48,124] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: my_dag.dataperf scheduled__2022-07-29T00:00:00+00:00 [queued]>
+[2022-07-30 00:31:48,144] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: my_dag.dataperf scheduled__2022-07-29T00:00:00+00:00 [queued]>
+[2022-07-30 00:31:48,144] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-30 00:31:48,144] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-07-30 00:31:48,144] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-30 00:31:48,181] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): dataperf> on 2022-07-29 00:00:00+00:00
+[2022-07-30 00:31:48,190] {standard_task_runner.py:52} INFO - Started process 663 to run task
+[2022-07-30 00:31:48,199] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'dataperf', 'scheduled__2022-07-29T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/team2_dag.py', '--cfg-path', '/tmp/tmph223719t', '--error-file', '/tmp/tmp0hulhxpz']
+[2022-07-30 00:31:48,201] {standard_task_runner.py:80} INFO - Job 5: Subtask dataperf
+[2022-07-30 00:31:48,365] {task_command.py:370} INFO - Running <TaskInstance: my_dag.dataperf scheduled__2022-07-29T00:00:00+00:00 [running]> on host 68163c7df535
+[2022-07-30 00:31:48,554] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=my_dag
+AIRFLOW_CTX_TASK_ID=dataperf
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-29T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-29T00:00:00+00:00
+[2022-07-30 00:31:48,559] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-30 00:31:48,561] {subprocess.py:74} INFO - Running command: ['bash', '-c', "\n\ncd /opt/dataperf\n\nsource .test/bin/activate\npython3 -m pip install --upgrade pip\npython3 -m pip install wheel\npython3 -m pip install sklearn\npython3 -m pip install tensorflow_hub\npython3 -m pip install tensorflow_datasets\npython3 -m pip install pyyaml\npython3 -m pip install torch\npython3 -m pip install numpy\npython3 -m pip install datascope=='0.0.3'\npython3 -m pip install torch\npython3 -m pip install pyarrow\npython3 -m pip install tqdm\npython3 -m pip install pandas\npython3 -m pip install xgboost\npython3 -m pip install seaborn\npython3 -m pip install loguru \n\npython3 create_baselines.py && python3 main.py && python3 plotter.py"]
+[2022-07-30 00:31:48,591] {subprocess.py:85} INFO - Output:
+[2022-07-30 00:31:48,610] {subprocess.py:92} INFO - bash: line 5: .test/bin/activate: No such file or directory
+[2022-07-30 00:31:51,763] {subprocess.py:92} INFO - Requirement already satisfied: pip in /home/***/.local/lib/python3.7/site-packages (22.1.2)
+[2022-07-30 00:31:52,014] {subprocess.py:92} INFO - Collecting pip
+[2022-07-30 00:31:52,052] {subprocess.py:92} INFO -   Downloading pip-22.2.1-py3-none-any.whl (2.0 MB)
+[2022-07-30 00:31:52,206] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 14.8 MB/s eta 0:00:00
+[2022-07-30 00:32:05,931] {subprocess.py:92} INFO - Installing collected packages: pip
+[2022-07-30 00:32:05,933] {subprocess.py:92} INFO -   Attempting uninstall: pip
+[2022-07-30 00:32:05,935] {subprocess.py:92} INFO -     Found existing installation: pip 22.1.2
+[2022-07-30 00:32:06,587] {subprocess.py:92} INFO -     Uninstalling pip-22.1.2:
+[2022-07-30 00:32:07,352] {subprocess.py:92} INFO -       Successfully uninstalled pip-22.1.2
+[2022-07-30 00:32:09,833] {subprocess.py:92} INFO - Successfully installed pip-22.2.1
+[2022-07-30 00:32:09,834] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:32:09,853] {subprocess.py:92} INFO - WARNING: There was an error checking the latest version of pip.
+[2022-07-30 00:32:11,647] {subprocess.py:92} INFO - Requirement already satisfied: wheel in /usr/local/lib/python3.7/site-packages (0.37.1)
+[2022-07-30 00:32:24,396] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:32:26,264] {subprocess.py:92} INFO - Collecting sklearn
+[2022-07-30 00:32:26,303] {subprocess.py:92} INFO -   Downloading sklearn-0.0.tar.gz (1.1 kB)
+[2022-07-30 00:32:26,316] {subprocess.py:92} INFO -   Preparing metadata (setup.py): started
+[2022-07-30 00:32:27,347] {subprocess.py:92} INFO -   Preparing metadata (setup.py): finished with status 'done'
+[2022-07-30 00:32:27,788] {subprocess.py:92} INFO - Collecting scikit-learn
+[2022-07-30 00:32:27,798] {subprocess.py:92} INFO -   Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
+[2022-07-30 00:32:28,760] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.8/24.8 MB 19.3 MB/s eta 0:00:00
+[2022-07-30 00:32:28,986] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.14.6 in /home/***/.local/lib/python3.7/site-packages (from scikit-learn->sklearn) (1.21.6)
+[2022-07-30 00:32:29,420] {subprocess.py:92} INFO - Collecting scipy>=1.1.0
+[2022-07-30 00:32:29,434] {subprocess.py:92} INFO -   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+[2022-07-30 00:32:30,868] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.1/38.1 MB 18.2 MB/s eta 0:00:00
+[2022-07-30 00:32:31,226] {subprocess.py:92} INFO - Collecting joblib>=0.11
+[2022-07-30 00:32:31,236] {subprocess.py:92} INFO -   Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+[2022-07-30 00:32:31,253] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.0/307.0 kB 28.6 MB/s eta 0:00:00
+[2022-07-30 00:32:31,305] {subprocess.py:92} INFO - Collecting threadpoolctl>=2.0.0
+[2022-07-30 00:32:31,313] {subprocess.py:92} INFO -   Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+[2022-07-30 00:32:31,346] {subprocess.py:92} INFO - Building wheels for collected packages: sklearn
+[2022-07-30 00:32:31,347] {subprocess.py:92} INFO -   Building wheel for sklearn (setup.py): started
+[2022-07-30 00:32:32,726] {subprocess.py:92} INFO -   Building wheel for sklearn (setup.py): finished with status 'done'
+[2022-07-30 00:32:32,728] {subprocess.py:92} INFO -   Created wheel for sklearn: filename=sklearn-0.0-py2.py3-none-any.whl size=1310 sha256=5492b075b83b51d0ae6d3d840be0deea07196530823b0b2920a9be9b879b9bb1
+[2022-07-30 00:32:32,729] {subprocess.py:92} INFO -   Stored in directory: /root/.cache/pip/wheels/46/ef/c3/157e41f5ee1372d1be90b09f74f82b10e391eaacca8f22d33e
+[2022-07-30 00:32:32,739] {subprocess.py:92} INFO - Successfully built sklearn
+[2022-07-30 00:32:45,616] {subprocess.py:92} INFO - Installing collected packages: threadpoolctl, scipy, joblib, scikit-learn, sklearn
+[2022-07-30 00:32:56,683] {subprocess.py:92} INFO - Successfully installed joblib-1.1.0 scikit-learn-1.0.2 scipy-1.7.3 sklearn-0.0 threadpoolctl-3.1.0
+[2022-07-30 00:32:56,689] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:32:59,072] {subprocess.py:92} INFO - Collecting tensorflow_hub
+[2022-07-30 00:32:59,119] {subprocess.py:92} INFO -   Downloading tensorflow_hub-0.12.0-py2.py3-none-any.whl (108 kB)
+[2022-07-30 00:32:59,140] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.8/108.8 kB 11.8 MB/s eta 0:00:00
+[2022-07-30 00:32:59,168] {subprocess.py:92} INFO - Requirement already satisfied: protobuf>=3.8.0 in /home/***/.local/lib/python3.7/site-packages (from tensorflow_hub) (3.20.0)
+[2022-07-30 00:32:59,171] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.12.0 in /home/***/.local/lib/python3.7/site-packages (from tensorflow_hub) (1.21.6)
+[2022-07-30 00:33:11,928] {subprocess.py:92} INFO - Installing collected packages: tensorflow_hub
+[2022-07-30 00:33:12,063] {subprocess.py:92} INFO - Successfully installed tensorflow_hub-0.12.0
+[2022-07-30 00:33:12,064] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:33:13,821] {subprocess.py:92} INFO - Collecting tensorflow_datasets
+[2022-07-30 00:33:13,863] {subprocess.py:92} INFO -   Downloading tensorflow_datasets-4.6.0-py3-none-any.whl (4.3 MB)
+[2022-07-30 00:33:14,012] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 30.9 MB/s eta 0:00:00
+[2022-07-30 00:33:14,410] {subprocess.py:92} INFO - Collecting absl-py
+[2022-07-30 00:33:14,419] {subprocess.py:92} INFO -   Downloading absl_py-1.2.0-py3-none-any.whl (123 kB)
+[2022-07-30 00:33:14,440] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.4/123.4 kB 19.7 MB/s eta 0:00:00
+[2022-07-30 00:33:14,448] {subprocess.py:92} INFO - Requirement already satisfied: dill in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (0.3.1.1)
+[2022-07-30 00:33:14,449] {subprocess.py:92} INFO - Requirement already satisfied: termcolor in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (1.1.0)
+[2022-07-30 00:33:14,452] {subprocess.py:92} INFO - Requirement already satisfied: protobuf>=3.12.2 in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (3.20.0)
+[2022-07-30 00:33:14,454] {subprocess.py:92} INFO - Requirement already satisfied: importlib-resources in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (5.7.1)
+[2022-07-30 00:33:14,455] {subprocess.py:92} INFO - Requirement already satisfied: six in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (1.16.0)
+[2022-07-30 00:33:14,458] {subprocess.py:92} INFO - Requirement already satisfied: typing-extensions in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (4.2.0)
+[2022-07-30 00:33:14,494] {subprocess.py:92} INFO - Collecting promise
+[2022-07-30 00:33:14,502] {subprocess.py:92} INFO -   Downloading promise-2.3.tar.gz (19 kB)
+[2022-07-30 00:33:14,526] {subprocess.py:92} INFO -   Preparing metadata (setup.py): started
+[2022-07-30 00:33:15,421] {subprocess.py:92} INFO -   Preparing metadata (setup.py): finished with status 'done'
+[2022-07-30 00:33:15,429] {subprocess.py:92} INFO - Requirement already satisfied: numpy in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (1.21.6)
+[2022-07-30 00:33:15,690] {subprocess.py:92} INFO - Collecting tqdm
+[2022-07-30 00:33:15,699] {subprocess.py:92} INFO -   Downloading tqdm-4.64.0-py2.py3-none-any.whl (78 kB)
+[2022-07-30 00:33:15,714] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.4/78.4 kB 10.0 MB/s eta 0:00:00
+[2022-07-30 00:33:15,733] {subprocess.py:92} INFO - Requirement already satisfied: requests>=2.19.0 in /home/***/.local/lib/python3.7/site-packages (from tensorflow_datasets) (2.27.1)
+[2022-07-30 00:33:15,787] {subprocess.py:92} INFO - Collecting toml
+[2022-07-30 00:33:15,799] {subprocess.py:92} INFO -   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+[2022-07-30 00:33:15,859] {subprocess.py:92} INFO - Collecting etils[epath]
+[2022-07-30 00:33:15,872] {subprocess.py:92} INFO -   Downloading etils-0.6.0-py3-none-any.whl (98 kB)
+[2022-07-30 00:33:15,891] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.1/98.1 kB 11.0 MB/s eta 0:00:00
+[2022-07-30 00:33:15,974] {subprocess.py:92} INFO - Collecting tensorflow-metadata
+[2022-07-30 00:33:15,983] {subprocess.py:92} INFO -   Downloading tensorflow_metadata-1.9.0-py3-none-any.whl (51 kB)
+[2022-07-30 00:33:15,995] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 51.0/51.0 kB 8.9 MB/s eta 0:00:00
+[2022-07-30 00:33:16,044] {subprocess.py:92} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.19.0->tensorflow_datasets) (2020.12.5)
+[2022-07-30 00:33:16,046] {subprocess.py:92} INFO - Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.19.0->tensorflow_datasets) (1.26.9)
+[2022-07-30 00:33:16,050] {subprocess.py:92} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.19.0->tensorflow_datasets) (3.3)
+[2022-07-30 00:33:16,055] {subprocess.py:92} INFO - Requirement already satisfied: charset-normalizer~=2.0.0 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.19.0->tensorflow_datasets) (2.0.12)
+[2022-07-30 00:33:16,214] {subprocess.py:92} INFO - Requirement already satisfied: zipp in /home/***/.local/lib/python3.7/site-packages (from etils[epath]->tensorflow_datasets) (3.8.0)
+[2022-07-30 00:33:16,292] {subprocess.py:92} INFO - Requirement already satisfied: googleapis-common-protos<2,>=1.52.0 in /home/***/.local/lib/python3.7/site-packages (from tensorflow-metadata->tensorflow_datasets) (1.56.2)
+[2022-07-30 00:33:16,534] {subprocess.py:92} INFO - Building wheels for collected packages: promise
+[2022-07-30 00:33:16,535] {subprocess.py:92} INFO -   Building wheel for promise (setup.py): started
+[2022-07-30 00:33:17,465] {subprocess.py:92} INFO -   Building wheel for promise (setup.py): finished with status 'done'
+[2022-07-30 00:33:17,466] {subprocess.py:92} INFO -   Created wheel for promise: filename=promise-2.3-py3-none-any.whl size=21503 sha256=3f0464b0fd259956046cdfc0a1765136a5bdb6ad0e81f3e7d778fb8f74b255c8
+[2022-07-30 00:33:17,467] {subprocess.py:92} INFO -   Stored in directory: /root/.cache/pip/wheels/29/93/c6/762e359f8cb6a5b69c72235d798804cae523bbe41c2aa8333d
+[2022-07-30 00:33:17,474] {subprocess.py:92} INFO - Successfully built promise
+[2022-07-30 00:33:30,724] {subprocess.py:92} INFO - Installing collected packages: tqdm, toml, promise, etils, absl-py, tensorflow-metadata, tensorflow_datasets
+[2022-07-30 00:33:34,072] {subprocess.py:92} INFO - Successfully installed absl-py-1.2.0 etils-0.6.0 promise-2.3 tensorflow-metadata-1.9.0 tensorflow_datasets-4.6.0 toml-0.10.2 tqdm-4.64.0
+[2022-07-30 00:33:34,073] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:33:35,698] {subprocess.py:92} INFO - Requirement already satisfied: pyyaml in /home/***/.local/lib/python3.7/site-packages (5.4.1)
+[2022-07-30 00:33:47,975] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:33:49,795] {subprocess.py:92} INFO - Collecting torch
+[2022-07-30 00:33:49,839] {subprocess.py:92} INFO -   Downloading torch-1.12.0-cp37-cp37m-manylinux1_x86_64.whl (776.3 MB)
+[2022-07-30 00:34:20,684] {subprocess.py:92} INFO - bash: line 12:   801 Killed                  python3 -m pip install torch
+[2022-07-30 00:34:22,881] {subprocess.py:92} INFO - Requirement already satisfied: numpy in /home/***/.local/lib/python3.7/site-packages (1.21.6)
+[2022-07-30 00:34:37,119] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:34:39,000] {subprocess.py:92} INFO - Collecting datascope==0.0.3
+[2022-07-30 00:34:39,063] {subprocess.py:92} INFO -   Downloading datascope-0.0.3.tar.gz (26 kB)
+[2022-07-30 00:34:39,109] {subprocess.py:92} INFO -   Installing build dependencies: started
+[2022-07-30 00:35:05,648] {subprocess.py:92} INFO -   Installing build dependencies: finished with status 'done'
+[2022-07-30 00:35:05,658] {subprocess.py:92} INFO -   Getting requirements to build wheel: started
+[2022-07-30 00:35:06,725] {subprocess.py:92} INFO -   Getting requirements to build wheel: finished with status 'done'
+[2022-07-30 00:35:06,737] {subprocess.py:92} INFO -   Preparing metadata (pyproject.toml): started
+[2022-07-30 00:35:07,832] {subprocess.py:92} INFO -   Preparing metadata (pyproject.toml): finished with status 'done'
+[2022-07-30 00:35:07,936] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.20 in /home/***/.local/lib/python3.7/site-packages (from datascope==0.0.3) (1.21.6)
+[2022-07-30 00:35:08,349] {subprocess.py:92} INFO - Collecting matplotlib>=3.5
+[2022-07-30 00:35:08,358] {subprocess.py:92} INFO -   Downloading matplotlib-3.5.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+[2022-07-30 00:35:08,730] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 31.1 MB/s eta 0:00:00
+[2022-07-30 00:35:08,943] {subprocess.py:92} INFO - Collecting PyYAML>=6.0
+[2022-07-30 00:35:08,955] {subprocess.py:92} INFO -   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)
+[2022-07-30 00:35:08,990] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 21.2 MB/s eta 0:00:00
+[2022-07-30 00:35:09,001] {subprocess.py:92} INFO - Requirement already satisfied: scikit-learn>=1.0 in /usr/local/lib/python3.7/site-packages (from datascope==0.0.3) (1.0.2)
+[2022-07-30 00:35:09,003] {subprocess.py:92} INFO - Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from datascope==0.0.3) (57.5.0)
+[2022-07-30 00:35:09,004] {subprocess.py:92} INFO - Requirement already satisfied: scipy>=1.7 in /usr/local/lib/python3.7/site-packages (from datascope==0.0.3) (1.7.3)
+[2022-07-30 00:35:09,007] {subprocess.py:92} INFO - Requirement already satisfied: pandas>=1.3 in /home/***/.local/lib/python3.7/site-packages (from datascope==0.0.3) (1.3.5)
+[2022-07-30 00:35:09,008] {subprocess.py:92} INFO - Requirement already satisfied: tqdm>=4.62 in /usr/local/lib/python3.7/site-packages (from datascope==0.0.3) (4.64.0)
+[2022-07-30 00:35:09,063] {subprocess.py:92} INFO - Collecting cycler>=0.10
+[2022-07-30 00:35:09,071] {subprocess.py:92} INFO -   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+[2022-07-30 00:35:09,828] {subprocess.py:92} INFO - Collecting pillow>=6.2.0
+[2022-07-30 00:35:09,848] {subprocess.py:92} INFO -   Downloading Pillow-9.2.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.2 MB)
+[2022-07-30 00:35:09,976] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 26.9 MB/s eta 0:00:00
+[2022-07-30 00:35:10,195] {subprocess.py:92} INFO - Collecting fonttools>=4.22.0
+[2022-07-30 00:35:10,208] {subprocess.py:92} INFO -   Downloading fonttools-4.34.4-py3-none-any.whl (944 kB)
+[2022-07-30 00:35:10,241] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 944.1/944.1 kB 35.1 MB/s eta 0:00:00
+[2022-07-30 00:35:10,261] {subprocess.py:92} INFO - Requirement already satisfied: python-dateutil>=2.7 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=3.5->datascope==0.0.3) (2.8.2)
+[2022-07-30 00:35:10,435] {subprocess.py:92} INFO - Collecting kiwisolver>=1.0.1
+[2022-07-30 00:35:10,453] {subprocess.py:92} INFO -   Downloading kiwisolver-1.4.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+[2022-07-30 00:35:10,500] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 27.7 MB/s eta 0:00:00
+[2022-07-30 00:35:10,510] {subprocess.py:92} INFO - Requirement already satisfied: packaging>=20.0 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=3.5->datascope==0.0.3) (21.3)
+[2022-07-30 00:35:10,512] {subprocess.py:92} INFO - Requirement already satisfied: pyparsing>=2.2.1 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=3.5->datascope==0.0.3) (2.4.7)
+[2022-07-30 00:35:10,545] {subprocess.py:92} INFO - Requirement already satisfied: pytz>=2017.3 in /home/***/.local/lib/python3.7/site-packages (from pandas>=1.3->datascope==0.0.3) (2022.1)
+[2022-07-30 00:35:10,616] {subprocess.py:92} INFO - Requirement already satisfied: joblib>=0.11 in /usr/local/lib/python3.7/site-packages (from scikit-learn>=1.0->datascope==0.0.3) (1.1.0)
+[2022-07-30 00:35:10,618] {subprocess.py:92} INFO - Requirement already satisfied: threadpoolctl>=2.0.0 in /usr/local/lib/python3.7/site-packages (from scikit-learn>=1.0->datascope==0.0.3) (3.1.0)
+[2022-07-30 00:35:10,779] {subprocess.py:92} INFO - Requirement already satisfied: typing-extensions in /home/***/.local/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib>=3.5->datascope==0.0.3) (4.2.0)
+[2022-07-30 00:35:10,912] {subprocess.py:92} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib>=3.5->datascope==0.0.3) (1.16.0)
+[2022-07-30 00:35:10,998] {subprocess.py:92} INFO - Building wheels for collected packages: datascope
+[2022-07-30 00:35:11,002] {subprocess.py:92} INFO -   Building wheel for datascope (pyproject.toml): started
+[2022-07-30 00:35:13,225] {subprocess.py:92} INFO -   Building wheel for datascope (pyproject.toml): finished with status 'error'
+[2022-07-30 00:35:13,246] {subprocess.py:92} INFO -   error: subprocess-exited-with-error
+[2022-07-30 00:35:13,246] {subprocess.py:92} INFO - 
+[2022-07-30 00:35:13,246] {subprocess.py:92} INFO -   × Building wheel for datascope (pyproject.toml) did not run successfully.
+[2022-07-30 00:35:13,246] {subprocess.py:92} INFO -   │ exit code: 1
+[2022-07-30 00:35:13,247] {subprocess.py:92} INFO -   ╰─> [36 lines of output]
+[2022-07-30 00:35:13,247] {subprocess.py:92} INFO -       running bdist_wheel
+[2022-07-30 00:35:13,247] {subprocess.py:92} INFO -       running build
+[2022-07-30 00:35:13,247] {subprocess.py:92} INFO -       running build_py
+[2022-07-30 00:35:13,247] {subprocess.py:92} INFO -       creating build
+[2022-07-30 00:35:13,247] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       copying datascope/version.py -> build/lib.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       copying datascope/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       copying datascope/algorithms/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       copying datascope/algorithms/TMC_Shapley.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       copying datascope/algorithms/KNN_Shapley.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:35:13,248] {subprocess.py:92} INFO -       copying datascope/algorithms/Measure.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/utils
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       copying datascope/utils/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/utils
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       copying datascope/utils/DShap.py -> build/lib.linux-x86_64-cpython-37/datascope/utils
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/inspection
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       copying datascope/inspection/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/inspection
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       copying datascope/inspection/utils.py -> build/lib.linux-x86_64-cpython-37/datascope/inspection
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,249] {subprocess.py:92} INFO -       copying datascope/importance/importance.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       copying datascope/importance/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       copying datascope/importance/add.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       copying datascope/importance/common.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       copying datascope/importance/shapley.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       running build_ext
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       cythoning datascope/importance/shapley_cy.pyx to datascope/importance/shapley_cy.c
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       building 'datascope.importance.shapley_cy' extension
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       creating build/temp.linux-x86_64-cpython-37
+[2022-07-30 00:35:13,250] {subprocess.py:92} INFO -       creating build/temp.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -       creating build/temp.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -       gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC -I/tmp/pip-build-env-3yus9aep/overlay/lib/python3.7/site-packages/numpy/core/include -I/usr/local/include/python3.7m -c datascope/importance/shapley_cy.c -o build/temp.linux-x86_64-cpython-37/datascope/importance/shapley_cy.o
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -       /tmp/pip-build-env-3yus9aep/overlay/lib/python3.7/site-packages/setuptools/dist.py:774: UserWarning: Usage of dash-separated 'description-file' will not be supported in future versions. Please use the underscore name 'description_file' instead
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -         % (opt, underscore_opt)
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -       warning: datascope/importance/shapley_cy.pyx:47:29: the result of using negative indices inside of code sections marked as 'wraparound=False' is undefined
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -       error: command 'gcc' failed: No such file or directory: 'gcc'
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO -       [end of output]
+[2022-07-30 00:35:13,251] {subprocess.py:92} INFO - 
+[2022-07-30 00:35:13,252] {subprocess.py:92} INFO -   note: This error originates from a subprocess, and is likely not a problem with pip.
+[2022-07-30 00:35:13,258] {subprocess.py:92} INFO -   ERROR: Failed building wheel for datascope
+[2022-07-30 00:35:13,258] {subprocess.py:92} INFO - Failed to build datascope
+[2022-07-30 00:35:13,258] {subprocess.py:92} INFO - ERROR: Could not build wheels for datascope, which is required to install pyproject.toml-based projects
+[2022-07-30 00:35:15,224] {subprocess.py:92} INFO - Collecting torch
+[2022-07-30 00:35:15,269] {subprocess.py:92} INFO -   Downloading torch-1.12.0-cp37-cp37m-manylinux1_x86_64.whl (776.3 MB)
+[2022-07-30 00:35:45,625] {subprocess.py:92} INFO - bash: line 15:   901 Killed                  python3 -m pip install torch
+[2022-07-30 00:35:47,891] {subprocess.py:92} INFO - Requirement already satisfied: pyarrow in /home/***/.local/lib/python3.7/site-packages (6.0.1)
+[2022-07-30 00:35:47,900] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.16.6 in /home/***/.local/lib/python3.7/site-packages (from pyarrow) (1.21.6)
+[2022-07-30 00:36:02,229] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:36:03,969] {subprocess.py:92} INFO - Requirement already satisfied: tqdm in /usr/local/lib/python3.7/site-packages (4.64.0)
+[2022-07-30 00:36:16,742] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:36:18,230] {subprocess.py:92} INFO - Requirement already satisfied: pandas in /home/***/.local/lib/python3.7/site-packages (1.3.5)
+[2022-07-30 00:36:18,265] {subprocess.py:92} INFO - Requirement already satisfied: python-dateutil>=2.7.3 in /home/***/.local/lib/python3.7/site-packages (from pandas) (2.8.2)
+[2022-07-30 00:36:18,266] {subprocess.py:92} INFO - Requirement already satisfied: pytz>=2017.3 in /home/***/.local/lib/python3.7/site-packages (from pandas) (2022.1)
+[2022-07-30 00:36:18,271] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.17.3 in /home/***/.local/lib/python3.7/site-packages (from pandas) (1.21.6)
+[2022-07-30 00:36:18,277] {subprocess.py:92} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.7/site-packages (from python-dateutil>=2.7.3->pandas) (1.16.0)
+[2022-07-30 00:36:30,884] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:36:32,609] {subprocess.py:92} INFO - Collecting xgboost
+[2022-07-30 00:36:32,643] {subprocess.py:92} INFO -   Downloading xgboost-1.6.1-py3-none-manylinux2014_x86_64.whl (192.9 MB)
+[2022-07-30 00:36:40,311] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 192.9/192.9 MB 5.7 MB/s eta 0:00:00
+[2022-07-30 00:36:41,720] {subprocess.py:92} INFO - Requirement already satisfied: scipy in /usr/local/lib/python3.7/site-packages (from xgboost) (1.7.3)
+[2022-07-30 00:36:41,721] {subprocess.py:92} INFO - Requirement already satisfied: numpy in /home/***/.local/lib/python3.7/site-packages (from xgboost) (1.21.6)
+[2022-07-30 00:36:55,509] {subprocess.py:92} INFO - Installing collected packages: xgboost
+[2022-07-30 00:37:01,047] {subprocess.py:92} INFO - Successfully installed xgboost-1.6.1
+[2022-07-30 00:37:01,049] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:37:02,848] {subprocess.py:92} INFO - Collecting seaborn
+[2022-07-30 00:37:02,902] {subprocess.py:92} INFO -   Downloading seaborn-0.11.2-py3-none-any.whl (292 kB)
+[2022-07-30 00:37:02,922] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 292.8/292.8 kB 25.7 MB/s eta 0:00:00
+[2022-07-30 00:37:02,937] {subprocess.py:92} INFO - Requirement already satisfied: pandas>=0.23 in /home/***/.local/lib/python3.7/site-packages (from seaborn) (1.3.5)
+[2022-07-30 00:37:03,326] {subprocess.py:92} INFO - Collecting matplotlib>=2.2
+[2022-07-30 00:37:03,447] {subprocess.py:92} INFO -   Using cached matplotlib-3.5.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+[2022-07-30 00:37:03,598] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.15 in /home/***/.local/lib/python3.7/site-packages (from seaborn) (1.21.6)
+[2022-07-30 00:37:03,600] {subprocess.py:92} INFO - Requirement already satisfied: scipy>=1.0 in /usr/local/lib/python3.7/site-packages (from seaborn) (1.7.3)
+[2022-07-30 00:37:03,621] {subprocess.py:92} INFO - Requirement already satisfied: packaging>=20.0 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=2.2->seaborn) (21.3)
+[2022-07-30 00:37:03,770] {subprocess.py:92} INFO - Collecting kiwisolver>=1.0.1
+[2022-07-30 00:37:03,790] {subprocess.py:92} INFO -   Using cached kiwisolver-1.4.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+[2022-07-30 00:37:03,824] {subprocess.py:92} INFO - Requirement already satisfied: python-dateutil>=2.7 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=2.2->seaborn) (2.8.2)
+[2022-07-30 00:37:04,093] {subprocess.py:92} INFO - Collecting fonttools>=4.22.0
+[2022-07-30 00:37:04,110] {subprocess.py:92} INFO -   Using cached fonttools-4.34.4-py3-none-any.whl (944 kB)
+[2022-07-30 00:37:04,142] {subprocess.py:92} INFO - Requirement already satisfied: pyparsing>=2.2.1 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=2.2->seaborn) (2.4.7)
+[2022-07-30 00:37:04,178] {subprocess.py:92} INFO - Collecting cycler>=0.10
+[2022-07-30 00:37:04,184] {subprocess.py:92} INFO -   Using cached cycler-0.11.0-py3-none-any.whl (6.4 kB)
+[2022-07-30 00:37:05,018] {subprocess.py:92} INFO - Collecting pillow>=6.2.0
+[2022-07-30 00:37:05,050] {subprocess.py:92} INFO -   Using cached Pillow-9.2.0-cp37-cp37m-manylinux_2_28_x86_64.whl (3.2 MB)
+[2022-07-30 00:37:05,131] {subprocess.py:92} INFO - Requirement already satisfied: pytz>=2017.3 in /home/***/.local/lib/python3.7/site-packages (from pandas>=0.23->seaborn) (2022.1)
+[2022-07-30 00:37:05,277] {subprocess.py:92} INFO - Requirement already satisfied: typing-extensions in /home/***/.local/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib>=2.2->seaborn) (4.2.0)
+[2022-07-30 00:37:05,342] {subprocess.py:92} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib>=2.2->seaborn) (1.16.0)
+[2022-07-30 00:37:19,359] {subprocess.py:92} INFO - Installing collected packages: pillow, kiwisolver, fonttools, cycler, matplotlib, seaborn
+[2022-07-30 00:37:24,406] {subprocess.py:92} INFO - Successfully installed cycler-0.11.0 fonttools-4.34.4 kiwisolver-1.4.4 matplotlib-3.5.2 pillow-9.2.0 seaborn-0.11.2
+[2022-07-30 00:37:24,407] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:37:26,123] {subprocess.py:92} INFO - Collecting loguru
+[2022-07-30 00:37:26,160] {subprocess.py:92} INFO -   Downloading loguru-0.6.0-py3-none-any.whl (58 kB)
+[2022-07-30 00:37:26,176] {subprocess.py:92} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.3/58.3 kB 6.3 MB/s eta 0:00:00
+[2022-07-30 00:37:39,851] {subprocess.py:92} INFO - Installing collected packages: loguru
+[2022-07-30 00:37:39,937] {subprocess.py:92} INFO - Successfully installed loguru-0.6.0
+[2022-07-30 00:37:39,940] {subprocess.py:92} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2022-07-30 00:37:42,216] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-07-30 00:37:42,217] {subprocess.py:92} INFO -   File "create_baselines.py", line 9, in <module>
+[2022-07-30 00:37:42,217] {subprocess.py:92} INFO -     from baselines.datascope_wrapper import ShapleyAppraiser
+[2022-07-30 00:37:42,217] {subprocess.py:92} INFO -   File "/opt/dataperf/baselines/datascope_wrapper.py", line 3, in <module>
+[2022-07-30 00:37:42,217] {subprocess.py:92} INFO -     from datascope.importance.common import SklearnModelAccuracy
+[2022-07-30 00:37:42,217] {subprocess.py:92} INFO - ModuleNotFoundError: No module named 'datascope'
+[2022-07-30 00:37:42,456] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-07-30 00:37:42,543] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-07-30 00:37:42,565] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=my_dag, task_id=dataperf, execution_date=20220729T000000, start_date=20220730T003148, end_date=20220730T003742
+[2022-07-30 00:37:42,649] {standard_task_runner.py:97} ERROR - Failed to execute job 5 for task dataperf (Bash command failed. The command returned a non-zero exit code 1.; 663)
+[2022-07-30 00:37:42,696] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-07-30 00:37:43,026] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

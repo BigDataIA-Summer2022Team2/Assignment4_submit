@@ -1,0 +1,12 @@
+nohup: ignoring input
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://204.15.72.120:8503
+  External URL: http://204.15.72.120:8503
+
+2022-07-30 09:46:32.123 Received event for non-watched file: /root/lemon/Assignment4/streamlit/Home.py
+2022-07-30 09:46:32.126 Received event for non-watched file: /root/lemon/Assignment4/streamlit/Home.py
+2022-07-30 09:47:37.982 Received event for non-watched file: /root/lemon/Assignment4/streamlit/Home.py
+2022-07-30 09:47:37.983 Received event for non-watched file: /root/lemon/Assignment4/streamlit/Home.py
+2022-07-30 09:50:06.930 Received event for non-watched file: /root/lemon/Assignment4/streamlit/Home.py

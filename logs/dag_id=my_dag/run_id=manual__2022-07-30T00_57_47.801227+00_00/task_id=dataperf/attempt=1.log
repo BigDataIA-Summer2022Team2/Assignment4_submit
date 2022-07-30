@@ -1,0 +1,39 @@
+[2022-07-30 00:57:49,210] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: my_dag.dataperf manual__2022-07-30T00:57:47.801227+00:00 [queued]>
+[2022-07-30 00:57:49,231] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: my_dag.dataperf manual__2022-07-30T00:57:47.801227+00:00 [queued]>
+[2022-07-30 00:57:49,231] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-30 00:57:49,231] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-07-30 00:57:49,231] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-30 00:57:49,260] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): dataperf> on 2022-07-30 00:57:47.801227+00:00
+[2022-07-30 00:57:49,268] {standard_task_runner.py:52} INFO - Started process 2002 to run task
+[2022-07-30 00:57:49,277] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'dataperf', 'manual__2022-07-30T00:57:47.801227+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/team2_dag.py', '--cfg-path', '/tmp/tmplq5exxhd', '--error-file', '/tmp/tmp_b6yj3jq']
+[2022-07-30 00:57:49,278] {standard_task_runner.py:80} INFO - Job 7: Subtask dataperf
+[2022-07-30 00:57:49,425] {task_command.py:370} INFO - Running <TaskInstance: my_dag.dataperf manual__2022-07-30T00:57:47.801227+00:00 [running]> on host 68163c7df535
+[2022-07-30 00:57:49,593] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=my_dag
+AIRFLOW_CTX_TASK_ID=dataperf
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-30T00:57:47.801227+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-07-30T00:57:47.801227+00:00
+[2022-07-30 00:57:49,595] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-30 00:57:49,597] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n\ncd /opt/dataperf\n\npython3 -m venv .test\nsource .test/bin/activate\n\n\npython3 create_baselines.py && python3 main.py && python3 plotter.py']
+[2022-07-30 00:57:49,638] {subprocess.py:85} INFO - Output:
+[2022-07-30 00:57:56,226] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-07-30 00:57:56,228] {subprocess.py:92} INFO -   File "create_baselines.py", line 9, in <module>
+[2022-07-30 00:57:56,228] {subprocess.py:92} INFO -     from baselines.datascope_wrapper import ShapleyAppraiser
+[2022-07-30 00:57:56,228] {subprocess.py:92} INFO -   File "/opt/dataperf/baselines/datascope_wrapper.py", line 3, in <module>
+[2022-07-30 00:57:56,228] {subprocess.py:92} INFO -     from datascope.importance.common import SklearnModelAccuracy
+[2022-07-30 00:57:56,228] {subprocess.py:92} INFO - ModuleNotFoundError: No module named 'datascope'
+[2022-07-30 00:57:56,428] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-07-30 00:57:56,501] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-07-30 00:57:56,510] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=my_dag, task_id=dataperf, execution_date=20220730T005747, start_date=20220730T005749, end_date=20220730T005756
+[2022-07-30 00:57:56,541] {standard_task_runner.py:97} ERROR - Failed to execute job 7 for task dataperf (Bash command failed. The command returned a non-zero exit code 1.; 2002)
+[2022-07-30 00:57:56,558] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-07-30 00:57:56,611] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

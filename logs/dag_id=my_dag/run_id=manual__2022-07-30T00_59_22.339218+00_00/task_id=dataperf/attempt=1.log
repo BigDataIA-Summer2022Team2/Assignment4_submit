@@ -1,0 +1,118 @@
+[2022-07-30 00:59:24,076] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: my_dag.dataperf manual__2022-07-30T00:59:22.339218+00:00 [queued]>
+[2022-07-30 00:59:24,101] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: my_dag.dataperf manual__2022-07-30T00:59:22.339218+00:00 [queued]>
+[2022-07-30 00:59:24,101] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-30 00:59:24,101] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-07-30 00:59:24,101] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-30 00:59:24,132] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): dataperf> on 2022-07-30 00:59:22.339218+00:00
+[2022-07-30 00:59:24,146] {standard_task_runner.py:52} INFO - Started process 2079 to run task
+[2022-07-30 00:59:24,159] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'my_dag', 'dataperf', 'manual__2022-07-30T00:59:22.339218+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/team2_dag.py', '--cfg-path', '/tmp/tmp3nn1ysbc', '--error-file', '/tmp/tmpcwb0o6ib']
+[2022-07-30 00:59:24,160] {standard_task_runner.py:80} INFO - Job 8: Subtask dataperf
+[2022-07-30 00:59:24,324] {task_command.py:370} INFO - Running <TaskInstance: my_dag.dataperf manual__2022-07-30T00:59:22.339218+00:00 [running]> on host 68163c7df535
+[2022-07-30 00:59:24,527] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=my_dag
+AIRFLOW_CTX_TASK_ID=dataperf
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-30T00:59:22.339218+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-07-30T00:59:22.339218+00:00
+[2022-07-30 00:59:24,532] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-30 00:59:24,533] {subprocess.py:74} INFO - Running command: ['bash', '-c', '\n\ncd /opt/dataperf\n\npython3 -m venv .test\nsource .test/bin/activate\npip install datascope\n\npython3 create_baselines.py && python3 main.py && python3 plotter.py']
+[2022-07-30 00:59:24,553] {subprocess.py:85} INFO - Output:
+[2022-07-30 00:59:30,709] {subprocess.py:92} INFO - Collecting datascope
+[2022-07-30 00:59:30,719] {subprocess.py:92} INFO -   Using cached datascope-0.0.3.tar.gz (26 kB)
+[2022-07-30 00:59:30,777] {subprocess.py:92} INFO -   Installing build dependencies: started
+[2022-07-30 00:59:55,219] {subprocess.py:92} INFO -   Installing build dependencies: finished with status 'done'
+[2022-07-30 00:59:55,228] {subprocess.py:92} INFO -   Getting requirements to build wheel: started
+[2022-07-30 00:59:56,151] {subprocess.py:92} INFO -   Getting requirements to build wheel: finished with status 'done'
+[2022-07-30 00:59:56,161] {subprocess.py:92} INFO -   Preparing metadata (pyproject.toml): started
+[2022-07-30 00:59:57,165] {subprocess.py:92} INFO -   Preparing metadata (pyproject.toml): finished with status 'done'
+[2022-07-30 00:59:57,284] {subprocess.py:92} INFO - Requirement already satisfied: pandas>=1.3 in /home/***/.local/lib/python3.7/site-packages (from datascope) (1.3.5)
+[2022-07-30 00:59:57,286] {subprocess.py:92} INFO - Requirement already satisfied: numpy>=1.20 in /home/***/.local/lib/python3.7/site-packages (from datascope) (1.21.6)
+[2022-07-30 00:59:57,288] {subprocess.py:92} INFO - Requirement already satisfied: matplotlib>=3.5 in ./.test/lib/python3.7/site-packages (from datascope) (3.5.2)
+[2022-07-30 00:59:57,290] {subprocess.py:92} INFO - Requirement already satisfied: scipy>=1.7 in ./.test/lib/python3.7/site-packages (from datascope) (1.7.3)
+[2022-07-30 00:59:57,291] {subprocess.py:92} INFO - Requirement already satisfied: tqdm>=4.62 in ./.test/lib/python3.7/site-packages (from datascope) (4.64.0)
+[2022-07-30 00:59:57,450] {subprocess.py:92} INFO - Collecting PyYAML>=6.0
+[2022-07-30 00:59:57,464] {subprocess.py:92} INFO -   Using cached PyYAML-6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (596 kB)
+[2022-07-30 00:59:57,480] {subprocess.py:92} INFO - Requirement already satisfied: scikit-learn>=1.0 in ./.test/lib/python3.7/site-packages (from datascope) (1.0.2)
+[2022-07-30 00:59:57,481] {subprocess.py:92} INFO - Requirement already satisfied: setuptools in ./.test/lib/python3.7/site-packages (from datascope) (47.1.0)
+[2022-07-30 00:59:57,499] {subprocess.py:92} INFO - Requirement already satisfied: python-dateutil>=2.7 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (2.8.2)
+[2022-07-30 00:59:57,512] {subprocess.py:92} INFO - Requirement already satisfied: packaging>=20.0 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (21.3)
+[2022-07-30 00:59:57,514] {subprocess.py:92} INFO - Requirement already satisfied: pillow>=6.2.0 in ./.test/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (9.2.0)
+[2022-07-30 00:59:57,516] {subprocess.py:92} INFO - Requirement already satisfied: fonttools>=4.22.0 in ./.test/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (4.34.4)
+[2022-07-30 00:59:57,517] {subprocess.py:92} INFO - Requirement already satisfied: kiwisolver>=1.0.1 in ./.test/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (1.4.4)
+[2022-07-30 00:59:57,520] {subprocess.py:92} INFO - Requirement already satisfied: pyparsing>=2.2.1 in /home/***/.local/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (2.4.7)
+[2022-07-30 00:59:57,522] {subprocess.py:92} INFO - Requirement already satisfied: cycler>=0.10 in ./.test/lib/python3.7/site-packages (from matplotlib>=3.5->datascope) (0.11.0)
+[2022-07-30 00:59:57,556] {subprocess.py:92} INFO - Requirement already satisfied: pytz>=2017.3 in /home/***/.local/lib/python3.7/site-packages (from pandas>=1.3->datascope) (2022.1)
+[2022-07-30 00:59:57,639] {subprocess.py:92} INFO - Requirement already satisfied: joblib>=0.11 in ./.test/lib/python3.7/site-packages (from scikit-learn>=1.0->datascope) (1.1.0)
+[2022-07-30 00:59:57,647] {subprocess.py:92} INFO - Requirement already satisfied: threadpoolctl>=2.0.0 in ./.test/lib/python3.7/site-packages (from scikit-learn>=1.0->datascope) (3.1.0)
+[2022-07-30 00:59:57,839] {subprocess.py:92} INFO - Requirement already satisfied: typing-extensions in /home/***/.local/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib>=3.5->datascope) (4.2.0)
+[2022-07-30 00:59:57,889] {subprocess.py:92} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib>=3.5->datascope) (1.16.0)
+[2022-07-30 00:59:57,973] {subprocess.py:92} INFO - Building wheels for collected packages: datascope
+[2022-07-30 00:59:57,975] {subprocess.py:92} INFO -   Building wheel for datascope (pyproject.toml): started
+[2022-07-30 00:59:59,902] {subprocess.py:92} INFO -   Building wheel for datascope (pyproject.toml): finished with status 'error'
+[2022-07-30 00:59:59,927] {subprocess.py:92} INFO -   error: subprocess-exited-with-error
+[2022-07-30 00:59:59,927] {subprocess.py:92} INFO - 
+[2022-07-30 00:59:59,927] {subprocess.py:92} INFO -   × Building wheel for datascope (pyproject.toml) did not run successfully.
+[2022-07-30 00:59:59,927] {subprocess.py:92} INFO -   │ exit code: 1
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -   ╰─> [36 lines of output]
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -       running bdist_wheel
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -       running build
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -       running build_py
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -       creating build
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37
+[2022-07-30 00:59:59,928] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       copying datascope/version.py -> build/lib.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       copying datascope/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       copying datascope/algorithms/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       copying datascope/algorithms/TMC_Shapley.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       copying datascope/algorithms/KNN_Shapley.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:59:59,929] {subprocess.py:92} INFO -       copying datascope/algorithms/Measure.py -> build/lib.linux-x86_64-cpython-37/datascope/algorithms
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/utils
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       copying datascope/utils/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/utils
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       copying datascope/utils/DShap.py -> build/lib.linux-x86_64-cpython-37/datascope/utils
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/inspection
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       copying datascope/inspection/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/inspection
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       copying datascope/inspection/utils.py -> build/lib.linux-x86_64-cpython-37/datascope/inspection
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       creating build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,930] {subprocess.py:92} INFO -       copying datascope/importance/importance.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       copying datascope/importance/__init__.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       copying datascope/importance/add.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       copying datascope/importance/common.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       copying datascope/importance/shapley.py -> build/lib.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       running build_ext
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       cythoning datascope/importance/shapley_cy.pyx to datascope/importance/shapley_cy.c
+[2022-07-30 00:59:59,931] {subprocess.py:92} INFO -       building 'datascope.importance.shapley_cy' extension
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       creating build/temp.linux-x86_64-cpython-37
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       creating build/temp.linux-x86_64-cpython-37/datascope
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       creating build/temp.linux-x86_64-cpython-37/datascope/importance
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -fPIC -I/tmp/pip-build-env-fn8f8fgj/overlay/lib/python3.7/site-packages/numpy/core/include -I/opt/dataperf/.test/include -I/usr/local/include/python3.7m -c datascope/importance/shapley_cy.c -o build/temp.linux-x86_64-cpython-37/datascope/importance/shapley_cy.o
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       /tmp/pip-build-env-fn8f8fgj/overlay/lib/python3.7/site-packages/setuptools/dist.py:774: UserWarning: Usage of dash-separated 'description-file' will not be supported in future versions. Please use the underscore name 'description_file' instead
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -         % (opt, underscore_opt)
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       warning: datascope/importance/shapley_cy.pyx:47:29: the result of using negative indices inside of code sections marked as 'wraparound=False' is undefined
+[2022-07-30 00:59:59,932] {subprocess.py:92} INFO -       error: command 'gcc' failed: No such file or directory: 'gcc'
+[2022-07-30 00:59:59,933] {subprocess.py:92} INFO -       [end of output]
+[2022-07-30 00:59:59,933] {subprocess.py:92} INFO - 
+[2022-07-30 00:59:59,933] {subprocess.py:92} INFO -   note: This error originates from a subprocess, and is likely not a problem with pip.
+[2022-07-30 00:59:59,933] {subprocess.py:92} INFO -   ERROR: Failed building wheel for datascope
+[2022-07-30 00:59:59,934] {subprocess.py:92} INFO - Failed to build datascope
+[2022-07-30 00:59:59,934] {subprocess.py:92} INFO - ERROR: Could not build wheels for datascope, which is required to install pyproject.toml-based projects
+[2022-07-30 01:00:02,520] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-07-30 01:00:02,521] {subprocess.py:92} INFO -   File "create_baselines.py", line 9, in <module>
+[2022-07-30 01:00:02,522] {subprocess.py:92} INFO -     from baselines.datascope_wrapper import ShapleyAppraiser
+[2022-07-30 01:00:02,522] {subprocess.py:92} INFO -   File "/opt/dataperf/baselines/datascope_wrapper.py", line 3, in <module>
+[2022-07-30 01:00:02,522] {subprocess.py:92} INFO -     from datascope.importance.common import SklearnModelAccuracy
+[2022-07-30 01:00:02,522] {subprocess.py:92} INFO - ModuleNotFoundError: No module named 'datascope'
+[2022-07-30 01:00:02,710] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-07-30 01:00:02,796] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-07-30 01:00:02,811] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=my_dag, task_id=dataperf, execution_date=20220730T005922, start_date=20220730T005924, end_date=20220730T010002
+[2022-07-30 01:00:02,869] {standard_task_runner.py:97} ERROR - Failed to execute job 8 for task dataperf (Bash command failed. The command returned a non-zero exit code 1.; 2079)
+[2022-07-30 01:00:02,904] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-07-30 01:00:02,982] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
